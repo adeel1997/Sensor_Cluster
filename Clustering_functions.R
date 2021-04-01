@@ -24,7 +24,7 @@ Cluster_Sensors_distance <- function(Sensor_location_data, distance,visualizatio
     #'
     
     ## Selecting latitude, longitude and sensor_name
-    Sensor_Name_loc <- unique(Sensor_location[,c("sensor_name","latitude","longitude")])
+    Sensor_Name_loc <- unique(Sensor_location_data[,c("sensor_name","latitude","longitude")])
     ## Converting the location to Spatial Point data frame
     xy <- sp::SpatialPointsDataFrame(
         matrix(c(Sensor_Name_loc$longitude,Sensor_Name_loc$latitude), ncol=2),
@@ -83,7 +83,7 @@ Cluster_Sensor_number <- function( Sensor_location_data,number,visualization=F){
     #'
     
     ## Selecting latitude, longitude and sensor_name
-    Sensor_Name_loc <- unique(Sensor_location[,c("sensor_name","latitude","longitude")])
+    Sensor_Name_loc <- unique(Sensor_location_data[,c("sensor_name","latitude","longitude")])
     km <- kmeans(Sensor_Name_loc[,c('latitude','longitude')], centers=number)
     Sensor_Name_loc$Cluster <- km$cluster
     if(visualization==T) {
