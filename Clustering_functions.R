@@ -113,7 +113,7 @@ Cluster_Sensor_number <- function( Sensor_location_data,number,visualization=F){
 }
 
 ## Testing the Function
-Sensor_location <- read.csv("Agra_kanpur/Sensors_loc.csv")
+Sensor_location <- read.csv("~/Sensors_loc.csv") ## Read the .csv file
 ## Give the location of the sensors data
 ## Filtering it for Kanpur city
 Sensor_location <- Sensor_location %>% filter(city=="Kanpur")
